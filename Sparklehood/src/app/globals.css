@@ -1,0 +1,339 @@
+/* Import font - assuming Inter is still desired */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); /* Added Poppins for headlines */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  /* Light Theme (Kept from previous Modernized Theme for contrast/fallback) */
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 224 71.4% 4.1%; /* Dark Blue-Gray */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 224 71.4% 4.1%; /* Dark Blue-Gray */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 224 71.4% 4.1%; /* Dark Blue-Gray */
+
+    --primary: 217 91.2% 59.8%; /* Brighter, Modern Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 220 14.3% 95.9%; /* Very Light Gray-Blue */
+    --secondary-foreground: 220 8.9% 46.1%; /* Mid Gray-Blue */
+
+    --muted: 220 14.3% 95.9%; /* Very Light Gray-Blue */
+    --muted-foreground: 220 8.9% 46.1%; /* Mid Gray-Blue */
+
+    --accent: 217 91.2% 95.9%; /* Lighter Blue for hover states */
+    --accent-foreground: 217 91.2% 30%; /* Darker Blue Text on Accent */
+
+    --destructive: 0 72.2% 50.6%; /* Slightly Softer Red */
+    --destructive-foreground: 0 0% 100%; /* White */
+
+    --border: 220 13% 91%; /* Light Gray-Blue Border */
+    --input: 220 13% 91%; /* Light Gray-Blue Input Background */
+    --ring: 217 91.2% 59.8%; /* Primary Blue Ring */
+
+    --radius: 0.75rem; /* Slightly increased radius for softer corners */
+    --shadow: 220 3% 15%; /* Adjusted shadow color for light mode */
+
+    /* Chart Colors (Adjusted for modern theme) */
+    --chart-1: 142 70% 50%; /* Vibrant Green */
+    --chart-2: 45 93% 47%;  /* Bright Yellow */
+    --chart-3: 0 72% 51%;   /* Softer Red */
+    --chart-4: 217 91% 60%; /* Primary Blue */
+    --chart-5: 27 87% 67%;  /* Orange (kept) */
+
+    /* Light Mode Severity Colors (Using previously defined modern ones) */
+    --severity-low-bg: 142 60% 94%; /* Lighter Green */
+    --severity-low-fg: 142 76% 36%; /* Darker Green Text */
+    --severity-medium-bg: 45 100% 94%; /* Lighter Yellow */
+    --severity-medium-fg: 45 87% 40%; /* Darker Yellow Text */
+    --severity-high-bg: 0 86% 97%; /* Very Light Red/Pink */
+    --severity-high-fg: 0 72% 51%; /* Softer Red Text */
+
+    /* Font Variables */
+    --font-sans: 'Inter', var(--font-inter), sans-serif;
+    --font-heading: 'Poppins', var(--font-sans); /* Use Poppins for headings */
+
+  }
+
+ /* Dark Theme ("Aurora" Theme) */
+  .dark {
+    /* Base & Backgrounds */
+    --background: 240 32% 10%; /* #141421 Slightly darker charcoal */
+    --foreground: 0 0% 95%; /* #F2F2F2 Brighter Off-white */
+
+    /* Cards & Popovers */
+    /* Use CSS variables for glass effect background */
+    --card: 240 32% 10%; /* Fallback card color */
+    --card-foreground: 0 0% 95%;
+    --popover: 240 25% 15%; /* #1F1F33 Darker popover */
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary & Accent */
+    --primary: 178 100% 50%; /* #00FFF7 Neon Cyan */
+    --primary-foreground: 0 0% 0%; /* Black for contrast on Cyan */
+    --accent: 323 100% 48%; /* #F500A0 Vivid Fuchsia */
+    --accent-foreground: 0 0% 100%; /* White for contrast on Fuchsia */
+
+    /* Secondary & Muted */
+    --secondary: 240 18% 20%; /* #2A2A3E Dark Gray/Charcoal */
+    --secondary-foreground: 0 0% 70%; /* #B3B3B3 Lighter Dim Gray */
+    --muted: 240 18% 20%; /* #2A2A3E Dark Gray/Charcoal */
+    --muted-foreground: 0 0% 60%; /* #999999 Darker Muted Gray */
+
+    /* Destructive */
+    --destructive: 0 100% 60%; /* #FF3333 Brighter Red */
+    --destructive-foreground: 0 0% 100%; /* White */
+
+    /* Borders, Inputs, Rings */
+    --border: 240 23% 30%; /* #3A3A5E Lighter Charcoal */
+    --input: 240 18% 20%; /* #2A2A3E Dark Gray/Charcoal */
+    --ring: 178 100% 50%; /* #00FFF7 Neon Cyan */
+    --shadow: 178 100% 50%; /* Use primary color for shadow glow */
+
+    /* Chart Colors (Mapped Success/Info/High) */
+    --chart-1: 81 100% 65%;  /* #A8FF4E Lime Green (Success) */
+    --chart-2: 50 100% 50%;  /* #FFD500 Sunshine Yellow (Info) */
+    --chart-3: 327 100% 59%; /* #FF2D95 Magenta Pink (High/Destructive Alt) */
+    --chart-4: 178 100% 50%; /* #00FFF7 Neon Cyan (Primary) */
+    --chart-5: 323 100% 48%; /* #F500A0 Vivid Fuchsia (Accent) */
+
+    /* Dark Mode Severity Colors (Aurora Theme) */
+    --severity-low-bg: 81 50% 13%; /* #1F330E Dark Green Background */
+    --severity-low-fg: 81 100% 65%; /* #A8FF4E Lime Green Text */
+    --severity-medium-bg: 50 100% 10%; /* #332A00 Dark Yellow Background */
+    --severity-medium-fg: 50 100% 50%; /* #FFD500 Sunshine Yellow Text */
+    --severity-high-bg: 327 65% 12%; /* #33091F Dark Magenta Background */
+    --severity-high-fg: 327 100% 59%; /* #FF2D95 Magenta Pink Text */
+
+     /* Font Variables */
+    --font-sans: 'Inter', var(--font-inter), sans-serif;
+    --font-heading: 'Poppins', var(--font-sans); /* Use Poppins for headings */
+  }
+} /* End of first @layer base */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Aurora Radial Gradient Background (Applied to body for fullscreen effect) */
+    /* Adjusted opacity and positioning */
+    background-image: radial-gradient(circle at 80% 20%, hsla(323, 100%, 48%, 0.1) 0%, hsla(240, 32%, 10%, 0) 50%),
+                      radial-gradient(ellipse at 20% 90%, hsla(178, 100%, 50%, 0.15) 0%, hsla(240, 32%, 10%, 0) 60%);
+    background-color: hsl(var(--background)); /* Fallback color */
+    background-attachment: fixed; /* Keep gradient fixed during scroll */
+
+    /* Smooth scrolling */
+    scroll-behavior: smooth;
+    /* Better font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Apply base font family */
+    font-family: var(--font-sans);
+  }
+   /* Improve focus visibility for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Apply heading font */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(0, 0%, 0%); /* Dark blue for light mode */
+  }
+
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: hsl(0, 0%, 100%); /* Pure white for maximum contrast */
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes scaleUpAndDown {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.animate-scale-badge {
+  animation: scaleUpAndDown 0.5s ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7); }
+  70% { box-shadow: 0 0 0 8px hsl(var(--primary) / 0); } /* Increased glow size */
+  100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+/* Neon border animation */
+@keyframes neon-border-pulse {
+    0%, 100% { border-color: hsl(var(--primary) / 0.7); box-shadow: 0 0 5px hsl(var(--primary) / 0.6), inset 0 0 3px hsl(var(--primary) / 0.4); }
+    50% { border-color: hsl(var(--accent) / 0.7); box-shadow: 0 0 15px hsl(var(--accent) / 0.6), inset 0 0 5px hsl(var(--accent) / 0.4); }
+}
+
+.animate-neon-border {
+    border-width: 1px;
+    border-style: solid;
+    animation: neon-border-pulse 4s linear infinite;
+}
+
+/* Gradient Text Animation */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Apply pulse glow to primary buttons on hover in dark mode */
+.dark .button-primary:hover {
+  @apply animate-pulse-glow;
+}
+
+/* Specific styles for Success/Info badges using chart colors */
+.badge-success {
+  background-color: hsla(var(--chart-1) / 0.15);
+  color: hsl(var(--chart-1));
+  border-color: hsla(var(--chart-1) / 0.3);
+  /* Add animation */
+   animation: scaleUpAndDown 0.6s ease-in-out;
+}
+
+.badge-info {
+  background-color: hsla(var(--chart-2) / 0.15);
+  color: hsl(var(--chart-2));
+  border-color: hsla(var(--chart-2) / 0.3);
+  /* Add animation */
+   animation: scaleUpAndDown 0.6s ease-in-out;
+}
+
+/* Specific styles for severity badges using severity colors */
+.badge-severity-low {
+  background-color: hsl(var(--severity-low-bg));
+  color: hsl(var(--severity-low-fg));
+  border-color: hsl(var(--severity-low-fg) / 0.5);
+}
+.badge-severity-medium {
+  background-color: hsl(var(--severity-medium-bg));
+  color: hsl(var(--severity-medium-fg));
+  border-color: hsl(var(--severity-medium-fg) / 0.5);
+}
+.badge-severity-high {
+  background-color: hsl(var(--severity-high-bg));
+  color: hsl(var(--severity-high-fg));
+  border-color: hsl(var(--severity-high-fg) / 0.5);
+}
+
+/* Specific styles for status badges */
+.badge-status-new {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    border-color: hsl(var(--border));
+}
+.badge-status-investigating {
+    background-color: hsla(var(--chart-2) / 0.1); /* Using chart-2 (yellow) for investigating */
+    color: hsl(var(--chart-2));
+    border-color: hsla(var(--chart-2) / 0.3);
+}
+.badge-status-mitigated {
+    background-color: hsla(var(--chart-1) / 0.1); /* Using chart-1 (green) for mitigated */
+    color: hsl(var(--chart-1));
+    border-color: hsla(var(--chart-1) / 0.3);
+}
+.badge-status-closed {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border-color: hsl(var(--border));
+    opacity: 0.7;
+}
+
+/* Glassmorphism effect - can be applied to any element */
+/* Dark Mode Glass Effect w/Neon Border */
+.dark .glass-effect {
+    background: hsla(var(--background) / 0.3); /* More transparency */
+    border: 1px solid hsla(var(--border) / 0.1);
+    backdrop-filter: blur(16px); /* More blur */
+    box-shadow: 0 4px 24px hsla(var(--shadow) / 0.2); /* Softer, wider shadow */
+    border-radius: var(--radius); /* Use defined radius */
+    /* Add animated neon border on hover */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.dark .glass-effect:hover {
+    animation: neon-border-pulse 4s linear infinite;
+}
+
+/* Headline with gradient text and neon shadow */
+.headline-gradient {
+    font-family: var(--font-heading); /* Use Poppins */
+    font-weight: 700; /* Adjust as needed */
+    /* Animated gradient */
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.5), 0 0 12px hsl(var(--accent) / 0.3); /* Enhanced shadow */
+    animation: gradient-shift 8s ease infinite; /* Apply gradient animation */
+}
+
+/* Custom utilities - example usage: bg-aurora-radial */
+@tailwind utilities {
+  .bg-aurora-radial {
+     background-image: radial-gradient(circle at 80% 20%, hsla(323, 100%, 48%, 0.1) 0%, hsla(240, 32%, 10%, 0) 50%),
+                       radial-gradient(ellipse at 20% 90%, hsla(178, 100%, 50%, 0.15) 0%, hsla(240, 32%, 10%, 0) 60%);
+  }
+  /* Add animated neon border utility */
+  .neon-border-animated {
+     @apply animate-neon-border border;
+  }
+
+   /* Gradient overlay utility */
+  .gradient-overlay {
+      position: relative;
+      overflow: hidden;
+  }
+   .gradient-overlay::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: linear-gradient(120deg, hsla(var(--primary)/0.2), hsla(var(--accent)/0.2), hsla(var(--primary)/0.2));
+      background-size: 300% 300%;
+      animation: gradient-shift 15s ease infinite;
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+   }
+  .gradient-overlay:hover::before {
+      opacity: 1;
+  }
+
+   /* Utility for kinetic text */
+   .kinetic-text-fill {
+      background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-shift 8s ease infinite;
+   }
+}
+

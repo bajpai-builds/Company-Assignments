@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Creation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="logo">dribble</h1>
+      <div class="content">
+        <h2 class="title">Welcome! Let's create your profile</h2>
+        <p class="subtitle">
+          Let others get to know you better! You can do these later
+        </p>
+
+        <div class="section avatar-section">
+          <h3 class="section-heading">Add an avatar</h3>
+          <div class="avatar-placeholder"></div>
+          <input
+            type="file"
+            id="avatar-input"
+            accept="image/*"
+            style="display: none"
+          />
+          <label for="avatar-input" class="choose-image">Choose Image</label>
+          <p class="choose-defaults">Or choose one of our defaults</p>
+        </div>
+
+        <div class="section location-section">
+          <h3 class="section-heading">Add your location</h3>
+          <input
+            type="text"
+            class="location-input"
+            placeholder="San Francisco"
+            id="location-input"
+          />
+          <button class="next-button">
+            <a href="./Whatbrings.html" id="next-link">Next</a>
+          </button>
+          <p class="subtitle2">or Press RETURN</p>
+          <p class="error-message" style="color: red; display: none">
+            Please enter your location.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById('avatar-input')
+        .addEventListener('change', function (event) {
+          const file = event.target.files[0]
+          if (file) {
+            const reader = new FileReader()
+            reader.onload = function (e) {
+              const avatarPlaceholder = document.querySelector(
+                '.avatar-placeholder'
+              )
+              avatarPlaceholder.style.backgroundImage = `url(${e.target.result})`
+            }
+            reader.readAsDataURL(file)
+          }
+        })
+
+      document
+        .getElementById('next-link')
+        .addEventListener('click', function (event) {
+          const locationInput = document.getElementById('location-input')
+          const errorMessage = document.querySelector('.error-message')
+
+          if (locationInput.value.trim() === '') {
+            errorMessage.style.display = 'block'
+            event.preventDefault()
+          } else {
+            errorMessage.style.display = 'none'
+          }
+        })
+    </script>
+  </body>
+</html>

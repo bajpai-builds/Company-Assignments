@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles3.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <nav class="nav">
+          <div class="logo">Dribble</div>
+          <div class="nav-contents">
+            <p>Inspiration</p>
+            <p>Find Work</p>
+            <p>Learn Design</p>
+            <p>Go Pro</p>
+            <p>Hire Designers</p>
+          </div>
+        </nav>
+        <div class="user-actions">
+          <div class="search-text">
+            <input type="text" placeholder="Search" />
+          </div>
+          <label for="upload" class="upload-button">Upload</label>
+          <input type="file" id="upload" style="display: none" />
+          <div class="user-avatar" id="user-avatar"></div>
+        </div>
+      </header>
+
+      <div class="divider"></div>
+      <h1 class="verify-email-title">Please verify your email...</h1>
+
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e4023b0899ac7e2743e5aae4c7d36472d998a630e0c612e81aa6e3c6c61d31a?apiKey=ec0ab7d892694737b4935bb18a2d4978&"
+        alt=""
+        class="email-icon"
+      />
+
+      <p class="verify-email-description">
+        Please verify your email address. We've sent a confirmation email to:
+      </p>
+
+      <p class="user-email">account@refero.design</p>
+
+      <p class="verify-email-instructions">
+        Click the confirmation link in that email to begin using Dribble
+      </p>
+
+      <p class="no-email-instructions">
+        Didn't receive the email? Check your Spam folder, it may have been
+        caught by a filter. If you still don't see it, you can
+        <a href="#" class="resend-link">resend the confirmation email</a>.
+      </p>
+
+      <p class="wrong-email">
+        Wrong email address?
+        <a href="#" class="change-email-link">Change it.</a>
+      </p>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">Dribble</div>
+        <div class="ac">
+          <h2>For designers</h2>
+          <div class="a">
+            <p>Go Pro!</p>
+            <p>Explore design work</p>
+            <p>Design blog</p>
+            <p>Overtime podcast</p>
+            <p>Playoffs</p>
+            <p>Weekly warm up</p>
+            <p>Refer a friend</p>
+            <p>Code of conduct</p>
+          </div>
+        </div>
+        <div class="bv">
+          <h2>Hire designers</h2>
+          <div class="b">
+            <p>Post a Job opening</p>
+            <p>Post a freelance project</p>
+            <p>Search for designers</p>
+            <div class="br">
+              <h2>Brands</h2>
+              <p>Advertise with us</p>
+            </div>
+          </div>
+        </div>
+        <div class="cb">
+          <h2>Directories</h2>
+          <div class="c">
+            <p>Design jobs</p>
+            <p>Designers for hire</p>
+            <p>Freelance designers for hire</p>
+            <p>Tags</p>
+            <p>Places</p>
+          </div>
+        </div>
+        <div class="ty">
+          <h2>Design Assets</h2>
+          <div class="c">
+            <p>Dribble Marketplace</p>
+            <p>Creative Market</p>
+            <p>Fontspring</p>
+            <p>Font Squirrel</p>
+          </div>
+        </div>
+        <div class="df">
+          <h2>Design Resources</h2>
+          <div class="d">
+            <p>Freelancing</p>
+            <p>Design Hiring</p>
+            <p>Design Portfolio</p>
+            <p>Design Education</p>
+            <p>Creative Process</p>
+            <p>Design Industry Trends</p>
+            <div>20,501,853 shots dribbled 🏀</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById('upload').addEventListener('change', function () {
+        const file = this.files[0]
+        const reader = new FileReader()
+        reader.onload = function (e) {
+          const imageUrl = e.target.result
+          document.getElementById(
+            'user-avatar'
+          ).style.backgroundImage = `url('${imageUrl}')`
+        }
+        reader.readAsDataURL(file)
+      })
+    </script>
+  </body>
+</html>

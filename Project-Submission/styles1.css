@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
+body {
+  margin: 0;
+  background-color: #f7f7f7;
+  font-family: 'Inter', sans-serif;
+}
+
+.page-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  color: #b727c3;
+  font-family: 'Tangerine', cursive;
+  font-size: 78px;
+
+  position: absolute;
+  bottom: 480px;
+  right: 1050px;
+  transform: scale(0.5);
+}
+
+.logo:hover {
+  transform: scale(0.6);
+  transition: transform 0.3s ease-in-out;
+}
+
+.back-arrow {
+  font-size: 22px;
+  color: #000;
+  cursor: pointer;
+  position: absolute;
+  bottom: 560px;
+  right: 1020px;
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 20%;
+  height: 20px;
+  width: 15px;
+}
+
+.back-arrow a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.back-arrow:hover {
+  background-color: #d3d3d3;
+  transition: background-color 0.3s ease-in-out, transform;
+}
+
+.main-title {
+  font-size: 36px;
+  color: #000;
+  margin-top: 100px;
+}
+
+.description {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.option-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.option {
+  width: 200px;
+  border: 4px solid #ddd;
+  border-radius: 10%;
+  padding: 20px;
+  margin: 0 10px;
+}
+
+.option:hover {
+  border-color: #953e91;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+.option img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.option p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+  font-weight: bold;
+}
+
+.finish-btn {
+  font-size: 24px;
+  color: #fff;
+  background-color: #b727c3;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 650px;
+  right: 350px;
+}
+
+.finish-btn:hover {
+  background-color: #953e91;
+  transform: scale(1.05);
+  transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+.last {
+  font-weight: bolder;
+  padding: 7px;
+}

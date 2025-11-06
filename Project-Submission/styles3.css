@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
+.container {
+  background-color: #fff;
+  font-family: '' Inder ', sans-serif';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  max-width: 1234px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-right: 250px;
+}
+
+.nav {
+  display: flex;
+  align-items: start;
+  gap: 40px;
+  font-size: 20px;
+  color: #000;
+}
+
+.nav-contents {
+  margin-top: 15px;
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  font-size: 20px;
+  color: #000;
+}
+
+.logo {
+  font-size: 48px;
+  color: #ff00f5;
+  font-family: 'Tangerine', cursive;
+  margin-top: 20px;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  white-space: nowrap;
+}
+
+.user-avatar {
+  width: 61px;
+  height: 61px;
+  border-radius: 50%;
+  background-image: url('albert-dera-ILip77SbmOE-unsplash.jpg'),
+    linear-gradient(#d9d9d9, #d9d9d9); /* Replace 'path/to/your/photo.jpg' with the actual path to your photo */
+  background-size: cover;
+  background-position: center;
+}
+
+.upload-button {
+  color: #ff00e6;
+  font-size: 20px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #333;
+  border-radius: 18px;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+.divider {
+  border: 1px solid rgba(0, 0, 0, 1);
+  background-color: #000;
+  min-height: 4px;
+  width: 101%;
+}
+
+.verify-email-title {
+  color: #000;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.email-icon {
+  width: 212px;
+}
+
+.verify-email-description {
+  color: rgba(0, 0, 0, 0.51);
+  text-align: center;
+  margin-top: 16px;
+  font-size: 20px;
+}
+
+.user-email {
+  color: #000;
+  text-align: center;
+  margin-top: 26px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.verify-email-instructions {
+  color: rgba(0, 0, 0, 0.51);
+  text-align: center;
+  margin-top: 32px;
+  font-size: 24px;
+}
+
+.no-email-instructions {
+  color: #000;
+  text-align: center;
+  margin-top: 37px;
+  font-size: 24px;
+}
+
+.resend-link {
+  color: rgba(243, 29, 234, 1);
+}
+
+.wrong-email {
+  color: #ff00f5;
+  text-align: center;
+  margin-top: 86px;
+  font-size: 24px;
+}
+
+.change-email-link {
+  color: rgba(255, 0, 245, 1);
+}
+
+.footer {
+  background-color: #fff;
+  padding: 38px 31px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.footer-logo {
+  font-size: 40px;
+  padding: 2px;
+  font-display: swap;
+  color: #ff00f5;
+  font-family: 'Tangerine', cursive;
+  margin-right: 100px;
+}
+
+.br {
+  margin-top: 35px;
+}
+
+.bv {
+  margin-left: 80px;
+}
+
+.cb {
+  margin-left: 80px;
+}
+
+.ty {
+  margin-left: 80px;
+}
+
+.df {
+  margin-left: 80px;
+}
+
+.search-text input[type='text'] {
+  border: 2px solid #ff00f5;
+  border-radius: 12px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-text input[type='text']:focus {
+  border-color: #ff0000;
+  outline: none;
+}
+
+.search-text input[type='text']::placeholder {
+  color: #999;
+}
